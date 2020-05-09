@@ -3,9 +3,9 @@ def emp(T):
         for c in r:
             if c==0:
                 print(".",end = " ")
-            else if
+            else:
+                print(c,end = " ")
         print()
 
-T = [[0]*4]*4
-
+T = [[1]*4]*4
 emp(T)
