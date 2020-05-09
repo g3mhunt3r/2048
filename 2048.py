@@ -2,10 +2,10 @@ def emp(T):
     for r in T:
         for c in r:
             if c==0:
-                print(".",end = " ")
+                print(".",end = "\t")
             else:
-                print(c,end = " ")
-        print()
+                print(c,end = "\t")
+        print("\n\n")
 
-T = [[1]*4]*4
+T = [[2048,2,4,8],[0]*4,[0]*4,[0]*4]
 emp(T)
