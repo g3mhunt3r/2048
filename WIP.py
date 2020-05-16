@@ -1,9 +1,13 @@
-def collapse(T):
+def collapse(T,dir):
     for j in range(4):
         lnv=-1
         lnp=-1
         ls=-1
-        for i in range(4):
+        if dir=='a':
+            x=range(4)
+        elif dir=='d':
+            x=range(3,-1,-1)
+        for i in x:
             #print("i: "+str(i)+" lnv: "+str(lnv)+" lnp: "+str(lnp)+" ls: "+str(ls))
             #print(c)
             if T[j][i]==0 and ls==-1: # If number is 0 and you haven't seen a zero before
@@ -13,7 +17,10 @@ def collapse(T):
                     T[j][lnp]=lnv*2 # double prev
                     T[j][i]=0 # clear current
                     lnv=-1 # reset last seen val
-                    ls=lnp+1 # set space to next block
+                    if dir=='a':
+                        ls=lnp+1 # set space to next block
+                    elif dir=='d':
+                        ls=lnp-1 #set space to previous block
                     lnp=-1 # reset last seen pos
                     continue
                 else: # If new number not same as old
@@ -27,7 +34,10 @@ def collapse(T):
                         lnv=T[j][i] # remember that number as last seen number
                         lnp=ls # remember its new position
                         T[j][i]=0 # empty its current position
-                        ls=lnp+1 # set the space after that to be the fist empty space
+                        if dir=='a':
+                            ls=lnp+1 # set the space after that to be the fist empty space
+                        elif dir=='d':
+                            ls=lnp-1 # set the space before that to be the first empty space
                         continue
                 # Only here if number not zero AND If new number not same as old AND If there was a space before
                 # Only here if number not zero AND If new number not same as old AND If there was a space before
