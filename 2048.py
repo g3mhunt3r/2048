@@ -9,12 +9,12 @@ def emp(T):
                 print(c,end = "\t")
         print("\n\n")
 
-def add(T):
+def add(T,n=2):
     while True:
         x=random.randint(0,3)
         y=random.randint(0,3)
         if T[x][y]==0:
-            T[x][y]=2
+            T[x][y]=n
             break
 
 def collapseLR(T,dir):
