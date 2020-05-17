@@ -99,7 +99,7 @@ while True:
     dir = input("Enter direction to collapse: ")
     collapse(T,dir)
     if checkzero(T) == False:
-		print("Game Over\nEnter q to exit, r to restart: ")
+        print("Game Over\nEnter q to exit, r to restart: ")
         c=input()
         if c=='q':
             break
