@@ -84,6 +84,13 @@ def collapse(T,dir):
         collapseLR(T,dir)
         transpose(T)
 
+def checkzero(T):
+    for i in range(4):
+        for j in range(4):
+            if T[i][j]==0:
+                return True
+    return False
+
 T=[[0]*4,[0]*4,[0]*4,[0]*4]
 add(T,4)
 add(T)
@@ -91,5 +98,13 @@ emp(T)
 while True:
     dir = input("Enter direction to collapse: ")
     collapse(T,dir)
+    if checkzero(T) == False:
+		print("Game Over\nEnter q to exit, r to restart: ")
+        c=input()
+        if c=='q':
+            break
+        elif c=='r':
+            T=[[0]*4,[0]*4,[0]*4,[0]*4]
+            add(T,4)
     add(T)
     emp(T)
