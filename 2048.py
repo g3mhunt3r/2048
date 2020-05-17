@@ -83,3 +83,13 @@ def collapse(T,dir):
         transpose(T)
         collapseLR(T,dir)
         transpose(T)
+
+T=[[0]*4,[0]*4,[0]*4,[0]*4]
+add(T,4)
+add(T)
+emp(T)
+while True:
+    dir = input("Enter direction to collapse: ")
+    collapse(T,dir)
+    add(T)
+    emp(T)
